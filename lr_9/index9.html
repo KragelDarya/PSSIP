@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>lr9</title>
+    <script>
+        // 1. Вариант: скрипт в <head>, вызывается после загрузки
+        document.addEventListener("DOMContentLoaded", function() {
+            alert("Страница загружена");
+        });
+
+        // Функция с if, confirm и return
+        function checkAge() {
+            let age = prompt("Введите ваш возраст:");
+            if (age >= 18) {
+                alert("Доступ разрешён");
+                return true;
+            } else {
+                let sure = confirm("Вам нет 18. Вы уверены, что хотите продолжить?");
+                if (!sure) {
+                    alert("Доступ запрещён");
+                    return false;
+                }
+                alert("Вы продолжили на свой страх и риск");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Примеры JavaScript</h2>
+
+    <!-- 2. Вариант: внедрение прямо в тег -->
+    <button onclick="alert('Это встроенный JS в атрибуте!')">Сообщение (alert)</button>
+
+    <!-- 3. Вариант: код внутри HTML -->
+    <button onclick="chooseColor()">Выбор цвета (switch)</button>
+    <button onclick="checkAge()">Проверка возраста (if + confirm + prompt)</button>
+    <button onclick="loopWithBreak()">Цикл while + break</button>
+    <button onclick="loopWithContinue()">do..while + continue</button>
+    <button onclick="forLoop()">Цикл for</button>
+    <a href="#" onclick="showExternalMessage(); return false;">Проверка внешнего файла (4-й способ)</a>
+
+
+
+
+    <!--  Вариант: внешний скрипт -->
+    <script src="skript.js"></script>
+
+    <script>
+        // switch
+        function chooseColor() {
+            let color = prompt("Введите цвет: red, green, blue");
+            switch (color) {
+                case "red":
+                    alert("Вы выбрали красный");
+                    break;
+                case "green":
+                    alert("Вы выбрали зелёный");
+                    break;
+                case "blue":
+                    alert("Вы выбрали синий");
+                    break;
+                default:
+                    alert("Неизвестный цвет");
+            }
+        }
+
+        // while + break
+        function loopWithBreak() {
+            let i = 0;
+            let result = "";
+            while (i < 10) {
+                i++;
+                if (i === 6) break;
+                result += i + " ";
+            }
+            alert("Счёт до 5: " + result);
+        }
+
+        // do..while + continue
+        function loopWithContinue() {
+            let i = 0;
+            let res = "";
+            do {
+                i++;
+                if (i % 2 === 0) continue;
+                res += i + " ";
+            } while (i < 10);
+            alert("Нечётные числа до 10: " + res);
+        }
+
+        // for + return
+        function forLoop() {
+            let sum = 0;
+            for (let i = 1; i <= 5; i++) {
+                sum += i;
+            }
+            alert("Сумма от 1 до 5: " + sum);
+            return sum;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛР№7 - Адаптивная Grid с бургер-меню</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: auto auto auto auto auto;
+      gap: 5px;
+      min-height: 100vh;
+      padding: 5px;
+    }
+
+    .block {
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .header, .footer {
+      background: #2c3e50;
+    }
+
+    .row1, .row2, .row3 {
+      display: grid;
+      gap: 5px;
+    }
+
+    .row1 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .row1 .col {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row2 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .row2 .col {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row3 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .b1 { background: #e74c3c; }
+    .b2 { background: #3498db; }
+    .b3 { background: #1abc9c; }
+    .b4 { background: #9b59b6; }
+    .b5 { background: #f39c12; }
+    .b6 { background: #d35400; }
+    .b7 { background: #2ecc71; }
+    .b8 { background: #7f8c8d; order: 2; }
+    .b9 { background: #34495e; order: 1; }
+
+    .b1 img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .b7 {
+      font-weight: normal;
+      padding: 15px;
+      line-height: 1.5;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 18px;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .burger {
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+      display: none;
+      user-select: none;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .promo-form {
+    text-align: left;
+    color: black;
+    width: 100%;
+    max-width: 420px;
+    font-weight: normal;
+    background-color: #f1f1f1; /* светло-серый фон */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* мягкая тень */
+    }
+
+    .promo-form h3 {
+    color: green;
+    margin-bottom: 15px;
+    }
+
+    .promo-form label {
+    display: block;
+    margin: 10px 0 4px;
+    }
+
+    .promo-form input[type="text"],
+    .promo-form input[type="email"],
+    .promo-form input[type="tel"] {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    }
+
+    .promo-form input[type="checkbox"] {
+    margin-right: 6px;
+    }
+
+    .promo-form .budget-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    }
+
+    .promo-form button {
+    width: 100%;
+    background-color: #43b02a;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    .card {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  font-family: sans-serif;
+}
+.purchase-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.left {
+  position: relative;
+  flex: 1 1 30%;
+}
+
+.right {
+  flex: 1 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ribbon-box {
+  position: absolute;
+  top: 10px;
+  left: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+
+.ribbon {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ribbon.blue {
+  background-color: #2980b9;
+}
+
+.ribbon.yellow {
+  background-color: #f1c40f;
+  color: #333;
+}
+
+.main-img {
+  width: 200px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  margin-left: -10px;
+}
+
+.thumbs {
+  display: flex;
+  gap: 5px;
+}
+
+.thumbs img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid red;
+  border-radius: 3px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.rating-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating {
+  font-size: 18px;
+  color: #f1c40f;
+  text-align: left;
+}
+
+.availability {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #c0392b;
+  margin-right: 10px;
+}
+
+.old-price {
+  margin-top: 2px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.quantity button {
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.quantity input {
+  width: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btn {
+  padding: 10px;
+  font-weight: bold;
+  height: 40px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.red {
+  background: #c62828;
+  color: white;
+  border: none;
+  width: 150px;
+  align-self: flex-end;
+}
+
+.btn.outline {
+  border: 1px solid #c62828;
+  color: #c62828;
+  background: white;
+  width: 150px;
+  align-self: flex-end;
+}
+
+.btn.small-outline {
+  border: 1px solid #c62828;
+  background: white;
+  color: #c62828;
+  font-size: 13px;
+  padding: 5px;
+  width: fit-content;
+}
+
+.delivery {
+  font-size: 13px;
+  color: #555;
+  text-align: left;
+
+}
+
+.delivery .green {
+  color: green;
+  font-weight: bold;
+}
+
+.delivery .link {
+  color: #ff0000;
+  cursor: pointer;
+}
+
+   
+    @media (max-width: 768px) {
+      .burger {
+        display: block;
+      }
+
+      .menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #34495e;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        display: none;
+        border-radius: 0 0 8px 8px;
+        z-index: 1;
+        width: 100%;
+      }
+
+      .menu-toggle:checked + .burger + .menu {
+        display: flex;
+      }
+
+      .row1, .row2, .row3 {
+        grid-template-columns: 1fr;
+      }
+
+      .row1 .col, .row2 .col {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .row1 .col, .row2 .col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+   .error {
+      border-color: red !important;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin: 2px 0 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <header class="block header">
+      <div class="header-content">
+        <span class="logo">шапка</span>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+        <label for="menu-toggle" class="burger">&#9776;</label>
+        <nav class="menu">
+          <a href="#">Главная</a>
+          <a href="#">О нас</a>
+          <a href="#">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="row1">
+      <div class="block b1">
+        <img src="..//lr_7/im.jpg" alt="Изображение">
+      </div>
+      <div class="col">
+        <div class="block b2">2</div>
+        <div class="block b3">3</div>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="block b4">
+        <form class="promo-form" id="promoForm" novalidate>
+          <h3>Заявка на продвижение сайта</h3>
+
+          <label for="site">Ваш сайт</label>
+          <input type="text" id="site" name="site" />
+
+          <div class="service-group">
+            <strong>Интересуемые услуги:</strong><br />
+            <label><input type="checkbox" name="service" value="seo" /> Продвижение сайта</label><br />
+            <label><input type="checkbox" name="service" value="ads" /> Контекстная реклама</label><br />
+            <label><input type="checkbox" name="service" value="webdev" /> Создание сайтов</label><br />
+            <label><input type="checkbox" name="service" value="analytics" /> Веб-аналитика</label><br />
+            <label><input type="checkbox" name="service" value="smm" /> Продвижение в социальных сетях</label><br />
+            <label><input type="checkbox" name="service" value="media" /> Медийная реклама</label><br />
+          </div>
+
+          <label for="budget">Бюджет/месяц</label>
+          <div class="budget-row">
+            <input type="text" id="budget" name="budget" value="30 000" />
+            <span>рублей</span>
+          </div>
+
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="email">Электронная почта</label>
+          <input type="email" id="email" name="email" />
+
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <button type="submit">Отправить</button>
+        </form>
+        </div>
+
+        <div class="col">
+          <div class="block b5">5</div>
+          <div class="block b6">6</div>
+        </div>
+        <div class="block b7">
+          text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+        </div>
+      </div>
+
+    <div class="row3">
+        <div class="block b9">
+           <div class="card">
+                <div class="left">
+                    <div class="ribbon-box">
+                        <div class="ribbon blue">Хиты продаж</div>
+                        <div class="ribbon yellow">По акции</div>
+                    </div>
+                    <img src="..//lr_8/umbrella_main.png" alt="Зонт" class="main-img">
+                    <div class="thumbs">
+                        <img src="..//lr_8/umbrella_1.png" alt="">
+                        <img src="..//lr_8/umbrella_2.png" alt="">
+                        <img src="..//lr_8/umbrella_3.png" alt="">
+                        <img src="..//lr_8/umbrella_4.png" alt="">
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="rating-row">
+                        <div class="rating">★★★★☆</div>
+                        <div class="availability">✔ Есть в наличии</div>
+                    </div>
+                    <div class="purchase-row">
+                        <div class="price-block">
+                            <span class="new-price">19.90 руб.</span>
+                            <span class="old-price">29.9</span>
+                        </div>
+                        <div class="quantity">
+                            <button>-</button>
+                            <input type="text" value="1">
+                            <button>+</button>
+                        </div>
+                        <button class="btn red">В корзину</button>
+                        
+                    </div>
+                    <button class="btn outline">Купить в 1 клик</button>
+                    <button class="btn small-outline">Нашли дешевле?</button>
+
+                    <div class="delivery">
+                        <p>🚚 Доставка по Минску<br>
+                            Курьером — сегодня, стоимость: 4 руб.<br>
+                            Самовывоз из наших<span class="link"> магазинов</span> — сегодня, бесплатно.<br>
+                            <span class="link">О доставке по Беларуси</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <div class="block b8">9</div>
+    </div>
+
+    <footer class="block footer">подвал</footer>
+  </div>'
+  
+  <script>
+  document.getElementById('promoForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Очистка ошибок
+    this.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    this.querySelectorAll('.error-message').forEach(el => el.remove());
+
+    let valid = true;
+
+    const showError = (input, message) => {
+      input.classList.add('error');
+      const msg = document.createElement('div');
+      msg.className = 'error-message';
+      msg.textContent = message;
+      input.parentNode.insertBefore(msg, input.nextSibling);
+      valid = false;
+    };
+
+    const site = this.site;
+    const budget = this.budget;
+    const name = this.name;
+    const email = this.email;
+    const phone = this.phone;
+    const services = this.querySelectorAll('input[name="service"]:checked');
+
+    // Валидация site
+    const siteValue = site.value.trim();
+    if (!siteValue) {
+      showError(site, 'Укажите сайт.');
+    } 
+
+    // Валидация budget
+    if (!budget.value.trim() || isNaN(budget.value.replace(/\s/g, '')) || parseInt(budget.value.replace(/\s/g, '')) <= 0) {
+      showError(budget, 'Введите корректный бюджет.');
+    }
+
+    // Валидация name
+   const nameValue = name.value.trim();
+    if (!nameValue) {
+      showError(name, 'Введите имя.');
+    } else if (nameValue.length < 2 || nameValue.length > 20) {
+      showError(name, 'Имя должно содержать от 2 до 20 символов.');
+    } else if (/\d/.test(nameValue)) {
+      showError(name, 'Имя не должно содержать цифры.');
+    }
+    // Валидация email
+    if (!email.value.trim() || !/^[\w.-]+@[\w.-]+\.[a-z]{2,}$/i.test(email.value)) {
+      showError(email, 'Некорректный email.');
+    }
+
+    // Валидация phone
+    if (!phone.value.trim() || !/^\+?\d{7,15}$/.test(phone.value.replace(/\D/g, ''))) {
+      showError(phone, 'Введите корректный номер.');
+    }
+
+    // Валидация checkbox услуг
+    if (services.length === 0) {
+      showError(this.querySelector('.service-group'), 'Выберите хотя бы одну услугу.');
+    }
+
+    if (valid) {
+      alert('Форма успешно отправлена!');
+      this.reset();
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ЛР 10-12</title>
+
+  <script>
+    // Задание 1: Показать текущую дату в формате месяц-год
+    function showMonthYear() {
+      const now = new Date();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const year = now.getFullYear();
+      alert(`${month}-${year}`);
+    }
+  </script>
+  <script src="skript.js"></script> <!-- внешний скрипт -->
+</head>
+<body>
+
+  <h2>Задание 1:</h2>
+  <button onclick="showMonthYear()">Показать год</button>
+
+  <h2>Задание 2:</h2>
+  <script>
+    // Задание 2: Вывод Фамилия Имя 7 раз
+    for (let i = 0; i < 7; i++) {
+      document.write("Крагель Дарья<br>");
+    }
+  </script>
+
+  <h2>Задание 3:</h2>
+  <script>
+    // Задание 3: Работа с массивом 
+    const originalArray = [];
+    for (let i = 0; i < 6; i++) {
+      originalArray.push(Math.floor(Math.random() * 21) - 10);
+    }
+
+    const modifiedArray = [...originalArray];
+    const sum = originalArray.reduce((acc, val) => acc + val, 0);
+    const rawAverage = sum / originalArray.length;
+    const average = parseFloat(rawAverage.toFixed(3));
+
+    for (let i = 0; i < modifiedArray.length; i++) {
+      if (modifiedArray[i] > 0) {
+        modifiedArray[i] = average;
+      }
+    }
+
+    document.write("<strong>Исходный массив:</strong> " + originalArray.join(", ") + "<br>");
+    document.write("<strong>Среднее арифметическое:</strong> " + average + "<br>");
+    document.write("<strong>Изменённый массив:</strong> " + modifiedArray.join(", ") + "<br>");
+  </script>
+
+  <h2>Задание 4:</h2>
+  <script>
+    // Задание 4: Расчёт по формуле
+    const x = prompt("Введите значение x для расчёта y = (3 - x) / (x² + 3x + 4):");
+    const result = calculateY(Number(x));
+
+    if (result !== "Ошибка") {
+      document.write("<strong>Значение y:</strong> " + result + "<br>");
+    }
+  </script>
+
+  <h2>Задание 5:</h2>
+  <script>
+    // Задание 5: Работа со строками
+    const s1 = "Крагель"; // ВАША ФАМИЛИЯ
+    const s2 = " пер. Керамический, д. 10"; // АДРЕС
+
+    const lengthS1 = s1.length;
+    const concatS1 = s1 + s2;
+    const upperS2 = s2.toUpperCase();
+
+    document.write("<strong>Строка s1:</strong> " + s1 + "<br>");
+    document.write("<strong>Длина s1:</strong> " + lengthS1 + "<br>");
+    document.write("<strong>s1 + s2:</strong> " + concatS1 + "<br>");
+    document.write("<strong>s2 в верхнем регистре:</strong> " + upperS2 + "<br>");
+  </script>
+
+</body>
+</html>

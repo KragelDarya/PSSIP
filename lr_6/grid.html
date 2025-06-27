@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ЛР№6 - Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .container {
+      display: grid;
+      grid-template-rows: 8% auto auto auto 8%;
+      gap: 5px;
+      height: 100vh;
+      padding: 5px;
+    }
+
+    .block {
+      display: grid;
+      place-items: center;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .header,
+    .footer {
+      background: #2c3e50;
+    }
+
+    .row1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row1 .col {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row2 .col {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .row3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .b1 { background: #e74c3c; }
+    .b2 { background: #3498db; }
+    .b3 { background: #1abc9c; }
+    .b4 { background: #9b59b6; }
+    .b5 { background: #f39c12; }
+    .b6 { background: #d35400; }
+    .b7 { background: #2ecc71; }
+    .b8 { background: #7f8c8d; }
+    .b9 { background: #34495e; }
+
+    /* Порядок блоков в row3 */
+    .b9 { order: 1; }
+    .b8 { order: 2; }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="block header">шапка</header>
+
+    <div class="row1">
+      <div class="block b1">1</div>
+      <div class="col">
+        <div class="block b2">2</div>
+        <div class="block b3">3</div>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="block b4">4</div>
+      <div class="col">
+        <div class="block b5">5</div>
+        <div class="block b6">6</div>
+      </div>
+      <div class="block b7">7</div>
+    </div>
+
+    <div class="row3">
+      <div class="block b9">8</div>
+      <div class="block b8">9</div>
+    </div>
+
+    <footer class="block footer">подвал</footer>
+  </div>
+</body>
+
+</html>

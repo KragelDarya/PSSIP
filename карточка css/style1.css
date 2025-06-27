@@ -1,0 +1,9 @@
+body {
+    /* фоновый цвет */
+    background: rgb(0, 153, 255);
+    font-family: 'Arial';
+    /* размер шрифта */
+    font-size: 25pt;
+    /* цвет шрифта */
+    color: black;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+<!-- заголовок страницы -->
+  <title>Крагель Дарья Дмитриевна</title>  
+  <!-- стилизация -->
+  <style>
+    body {
+      background-color: yellow;
+      font-size: 11pt;
+      font-family: Arial;
+    }
+    h1 {
+      text-align: center;
+    }
+    .gr{
+        color: green;
+    }
+    .kurs{
+        text-align: center;
+    }
+   .yvlech{
+        text-align: left;
+        color: blue;
+   }
+   ul{
+        list-style-type: none;
+   }
+    .blue-left {
+      text-align: left;
+      color: blue;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      float: left;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    table {
+      margin-top: 20px;
+    }
+    .aaa{
+        background-color: rgb(121, 121, 121);
+    }
+    .zzz{
+        background-color: rgb(210, 210, 210);
+    }
+    .qqq{
+        background-color: rgb(255, 255, 255);
+    }
+    .form-block {
+        width: 300px;
+        padding: 15px;
+        border: 2px solid #888;
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+    .form-block label {
+        display: block;
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+    <!--форматирование текста -->
+    <h1><u>Крагель Дарья Дмитриевна</u></h1>
+    <p><a href="#table">Перейти к таблице</a></p><!-- ссылка на таблицу -->
+    <p class="gr"><i><s>Группа: ПЗТ-40</s></i></p>
+    <p class="kurs"><sup>Курс: 3</sup></p>
+    <p class="yvlech"><b>Увлечения: Программирование, музыка, чтение</b></p>
+
+    <!-- Создание списков -->
+    <h2>Создание списков</h2>
+    <ul>
+    <li>Дескриптор 
+        <ul><li>Основная единица языка разметки, известная как "тег"</li></ul>
+    </li>
+    <li>Атрибут
+        <ul><li>Свойства тега, задающие дополнительные возможности оформления текста</li></ul>
+    </li>
+    <li>Метка
+        <ul><li>Определяет начало и конец элемента</li></ul>
+    </li>
+    </ul>
+    <!-- работа с изображениями -->
+    <h2>Работа с изображениями</h2>
+    <img src="1f.jpg" alt="Изображение">
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <h2>Создание гиперссылок</h2>
+    <p><a href="mailto:dasha12300227@gmail.com">Почта</a></p>
+    <br><br><br><br><br><br><br><br><br><br><br>    <br><br><br><br><br><br><br><br><br><br><br>
+    <!--таблица -->
+    <h2 id="table">Создать таблицу</h2>
+    <table >
+    <tr>
+        <th rowspan="2" class="aaa">Браузер</th>
+        <th colspan="2" class="zzz">Посещения</th>
+    </tr>
+    <tr>
+        <th class="zzz">Количество</th>
+        <th class="zzz">Проценты</th>
+    </tr>
+    <tr class="qqq">
+        <td>Mozilla</td>
+        <td>163</td>
+        <td>59</td>
+    </tr>
+    <tr class="qqq">
+        <td>Chrome</td>
+        <td>78</td>
+        <td>26</td>
+    </tr>
+    </table>
+    <!-- форма-->
+    <h2>Создать форму</h2>
+    <div class="form-block">
+    <form>
+        <label>Ваше имя:<br>
+            <input type="text" name="name">
+        </label>
+        <label>E-Mail:<br>
+            <input type="email" name="email">
+        </label>
+        <label>Заголовок:<br>
+            <input type="text" name="subject">
+        </label>
+        <label>Получатель:<br>
+            <select name="recipient">
+                <option>Отдел заказов</option>
+                <option>Техподдержка</option>
+                <option>Общие вопросы</option>
+            </select>
+        </label>
+        <label>Сообщение:<br>
+            <textarea rows="5" cols="30" name="message"></textarea>
+        </label>
+
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Сбросить">
+    </form>
+    </div>
+</body>
+</html>

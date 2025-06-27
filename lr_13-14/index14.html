@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подготовительное задание</title>
+    <script>
+        window.onload = function () {
+            // 1) Получаем массив всех ссылок на странице
+            const links = document.getElementsByTagName('a');
+
+            // 2) Выводим информацию о ссылках через 1 секунду
+            setTimeout(function () {
+                let message = "Ссылки на странице:\n";
+                for (let i = 0; i < links.length; i++) {
+                    message += (i + 1) + ") " + links[i].href + "\n";
+                }
+                alert(message);
+            }, 1000);
+
+            // 3) Удаление изображения при клике
+            const image = document.getElementById('myImage');
+            image.onclick = function () {
+                image.remove();
+            };
+
+            // 4–6) Изменение стиля по кнопке
+            const styleButton = document.getElementById('styleBtn');
+            styleButton.onclick = function () {
+                document.body.style.backgroundColor = 'yellow';
+                document.body.style.fontFamily = 'Arial, sans-serif';
+                if (image) {
+                    image.style.border = '1px solid green';
+                }
+            };
+
+            // Кнопка: показать глубину цвета
+            const colorButton = document.getElementById('colorBtn');
+            colorButton.onclick = function () {
+                const colorDepth = screen.colorDepth;
+                const newWin = window.open('', '', 'width=800,height=600,scrollbars=no');
+                if (newWin) {
+                    newWin.document.write(`<p>Глубина цвета экрана: ${colorDepth} бит на пиксель</p>`);
+                    newWin.document.close();
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <!-- 1. Фамилия Имя Отчество -->
+    <p>Крагель Дарья Дмитриевна</p>
+
+    <!-- 2. Ссылка на любой сайт -->
+    <a href="http://ggpk.by/Raspisanie/Files/PZT.html">Расписание</a>
+
+    <!-- 3. Любое изображение -->
+    <br><br>
+    <img src="../lr_13-14/im.jpg" alt="картинка" id="myImage">
+
+    <!-- Кнопки -->
+    <br><br>
+    <button id="styleBtn">Изменить стиль</button>
+    <br><br>
+    <button id="colorBtn">Глубина цвета</button>
+</body>
+</html>
