@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Анкета</title>
+        <meta name="description" content="Page dascription">
+        <meta name="keywords" lang="ru" content="Ключевые слова через запятую">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="/favicon.ico">
+        <script src="script.js"></script>    
+    </head>
+    <body>    
+        
+        <h1>Анкета пользователя</h1>
+
+        <form action="/submit" method="post">
+            
+            <label>Имя:</label><br>
+            <input type="text"><br><br>
+
+            <label>Возраст:</label><br>
+            <input type="number" min="0" max="120"><br><br>
+
+            <p>Пол:</p>
+            <input type="radio" id="male" name="gender" value="Мужской">
+            <label for="male">Мужской</label><br>
+            <input type="radio" id="female" name="gender" value="Женский">
+            <label for="female">Женский</label><br>
+
+            <p>Интересы:</p>
+            <input type="checkbox" id="sport" name="interests" value="Спорт">
+            <label for="sport">Спорт</label><br>
+            <input type="checkbox" id="music" name="interests" value="Музыка">
+            <label for="music">Музыка</label><br>
+            <input type="checkbox" id="tech" name="interests" value="Технологии">
+            <label for="tech">Технологии</label><br>
+            <input type="checkbox" id="travel" name="interests" value="Путешествия">
+            <label for="travel">Путешествия</label><br><br>
+
+            <label for="bio">О себе:</label><br>
+            <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+
+            <button>Отправить</button>
+        </form>
+
+        <p></p>
+        <a href="..//js/rezume.html">На главную</a>
+    </body>
+</html>
