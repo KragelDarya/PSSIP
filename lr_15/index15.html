@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Практика: Объекты в JavaScript</title>
+        <link rel="stylesheet" href="style15.css">
+    </head>
+    <body>
+        <h1>Практика: Работа с объектами в JavaScript</h1>
+
+        <h2>Управление пользователями</h2>
+        <input type="text" id="userName" placeholder="Введите имя">
+        <input type="number" id="userAge" placeholder="Введите возраст">
+        <button onclick="addUser()">Добавить</button>
+        <button onclick="removeUser()">Удалить</button>
+        <button onclick="listUsers()">Показать список</button>
+
+        <h3>Поиск пользователя по возрасту</h3>
+        <input type="number" id="searchAge" placeholder="Введите возраст">
+        <button onclick="findUserByAge()">Найти</button>
+
+        <pre id="output"></pre>
+
+        <script src="script15.js"></script>
+    </body>
+</html>
