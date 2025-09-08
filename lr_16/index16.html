@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Catch the Stars — ООП на чистом JS</title>
+<link rel="stylesheet" href="style16.css">
+</head>
+<body>
+<div class="card">
+<header>
+<h1>🎮 Catch the Stars — ООП на чистом JS</h1>
+<div class="stats">
+<div class="pill">Очки: <span id="score">0</span></div>
+<div class="pill">Жизни: <span id="lives">3</span></div>
+<div class="pill">Рекорд: <span id="best">0</span></div>
+</div>
+</header>
+<div id="gameWrap">
+<canvas id="game" width="640" height="520" aria-label="Игровое поле"></canvas>
+<aside>
+<div class="legend"><strong>Цель:</strong> ловите <span class="good">звёзды</span>, избегайте <span class="bad">метеоров</span>.</div>
+<div class="legend">Управление: ← → или <span class="kbd">A</span>/<span class="kbd">D</span>.
+Пауза: <span class="kbd">P</span>. Перезапуск: <span class="kbd">R</span>.</div>
+<div class="row">
+<button id="btnStart">Начать игру</button>
+<button id="btnPause">Пауза</button>
+</div>
+<div class="row">
+<button id="btnReset">Сбросить рекорд</button>
+</div>
+<div class="legend">Сложность</div>
+<div class="bar"><i id="diffBar"></i></div>
+</aside>
+</div>
+<footer>© ООП‑пример на ES2022. Код написан без библиотек.</footer>
+</div>
+
+
+<script src="script16.js"></script>
+</body>
+</html>
