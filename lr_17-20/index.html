@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Page dascription">
+        <meta name="keywords" lang="ru" content="Ключевые слова через запятую">
+        <meta name="viewport" content="width=device-width">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="icon" href="/favicon.ico">
+    </head>
+    <body>
+        <div class="first">
+            <section class="hero-section">
+                <header>
+                    <div class="header-top">
+                    <!-- Левая колонка -->
+                        <div class="header-left">
+                            <button onclick="toggleMenu()" style="background:none; border:none;">
+                                <img class="menu-top" src="./image/Header/menu 1.png" width="19" height="19" alt="Меню">
+                                <img class="menu-bottom" src="./image/Header/menu 2.png" width="19" height="19" alt="Меню">
+                            </button>
+                            <a>Меню</a>
+                            <div class="image-container">
+                                <img class="image-top" src="./image/Header/like 2.png" width="21" height="21" alt="Избранное">
+                                <img class="image-bottom" src="./image/Header/like 1.png" width="21" height="21" alt="Избранное">
+                            </div>
+                            <img src="./image/Header/magnifying-glass (1) 3.png" width="24" height="24" alt="Поиск">
+                        </div>
+
+                        <!-- Центр логотип -->
+                        <div class="header-center">
+                            <img src="./image/Header/logo_grans_2 2.png" width="64" height="48" alt="Логотип">
+                            <a>RANSS</a>
+                        </div>
+
+                        <!-- Правая колонка -->
+                        <div class="header-right">
+                            <div class="yellow-icons" id="yellowIcons">
+                                <img src="./image/Header/header__call-btn.png" width="38" height="38" alt="Позвонить">
+                                <img src="./image/Header/header__whatsapp-btn.png" width="38" height="38" alt="WhatsApp">
+                            </div>
+                            <div class="phone">+7(495) 127 89 90<br>
+                                <span class="status">Сейчас работаем</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Раскрывающееся меню -->
+                    <div class="menu-panel" id="menuPanel">
+                        <div class="clean"></div>
+                        <div class="mp1">
+                            <a>Многостраничник</a>
+                            <a id="favoritesLink">Понравившееся</a>
+                        </div>
+                        <div class="mp1">
+                            <a>Каталог готовых сайтов</a>
+                            <a>Интернет-Магазин</a>
+                        </div>
+                        <div class="mp1">
+                            <a>Настройка рекламы</a>
+                            <a>SEO продвижение</a>
+                        </div>
+                        <div class="clean"></div>
+                        <div class="cont">
+                            <a>Пн - Пт 10:00 - 18:00</a>
+                            <a>
+                                <img src="./image/Header/envelope 4.png" width="16" alt="Email"> info@granss.ru
+                            </a>
+                        </div>
+                        <div></div>
+                    </div>
+                    <hr>
+                </header>
+                
+                <div class="row">
+                    <div class="main1">
+                        <div class="container1">
+                        <!-- Фоновые изображения -->
+                            <img src="./image/ONE/fon 1.png" class="background-top1" alt="Фоновое изображение">
+                            <img src="./image/ONE/clouds.png" class="clouds" alt="Облака">
+                            <img src="./image/ONE/облака.png" class="clouds2" alt="Облака">
+                        <!-- Основной контент -->
+                            <div class="main-content">
+                                <h1>
+                                    <span class="heading-green">Создание и продвижение</span><br>
+                                    <span class="heading-black">сайтов в Москве</span>
+                                </h1>
+                                <p class="subtitle">Закройте вопрос с клиентами раз и навсегда</p>
+                                <ul class="feature-list">
+                                    <li>
+                                        <img src="./image/ONE/light 1.png" width="39" height="37" alt="Молния">
+                                    </li>
+                                    <li class="feature-text">
+                                        Делаем <span class="highlight">красивые и современные сайты</span><br>
+                                        для привлечения клиентов в ваш бизнес
+                                    </li>
+                                </ul>
+                                <button class="cta-button">
+                                    <span>Оставить заявку<br>и получить КП</span>
+                                </button>
+                            </div>
+                            <div class="laptop-section">
+                                <img src="./image/ONE/pc 1.png" class="laptop-image" alt="Ноутбук с сайтом">
+                            </div>
+                            <div class="phone-section">
+                                <img src="./image/ONE/phone 1.png" width="144" height="162" alt="Телефон">
+                            </div>
+                            <div class="cash-section">
+                                <img src="./image/ONE/cash.png" width="122" height="137" alt="Деньги" id="cash">
+                            </div>
+                            <div class="coin-section">
+                                <img src="./image/ONE/coin.png" width="43" height="59" alt="Монета">
+                            </div>
+                            <div class="book-section">
+                                <img src="./image/ONE/book 1.png" width="204" height="153" alt="Книга">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="second">
+            <div class="container2">
+            <img src="./image/TWO/Ellipse 23.png" class="ellipse2" alt="ellipse">
+            <h2>Какой тип сайта Вам нужен?</h2> 
+                <div class="website-types">
+                    <!-- Карточка 1 - Лендинг -->
+                    <div class="website-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Лендинг</h3>
+                        </div>
+                        <div class="card-image">
+                            <img src="./image/TWO/lending 1.png" alt="">
+                        </div>
+                        <div class="card-price">
+                            <div class="old-price">45 000 руб</div>
+                            <div class="new-price">от 35 000 руб</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn-details">Подробнее</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 2 - Многостраничный -->
+                    <div class="website-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Многостраничный</h3>
+                        </div>
+                        <div class="card-image">
+                            <img src="./image/TWO/multgroup 1.png" alt="">
+                        </div>
+                        <div class="card-price">
+                            <div class="old-price">60 000 руб</div>
+                            <div class="new-price">от 45 000 руб</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn-details">Подробнее</a>
+                        </div>
+                    </div>
+                    <!-- Карточка 3 - Интернет-магазин -->
+                    <div class="website-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Интернет-магазин</h3>
+                        </div>	
+                        <div class="card-image">
+                            <img src="./image/TWO/intshop.png" alt="">
+                        </div>
+                        <div class="card-price">
+                            <div class="old-price">65 000 руб</div>
+                            <div class="new-price">от 49 000 руб</div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn-details">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+        <div class="third">
+            <div class="container3">
+                <div class="circle"></div>
+                <img src="./image/THREE/Ellipse 29.png" class="ellipse3" alt="ellipse">
+                <div class="header3">
+                    <h1>Узнайте стоимость разработки<br> Вашего сайта</h1>
+                    <p>Ответьте на несколько простых вопросов</p>
+                </div>
+
+                <!-- Первый слайд -->
+                <div class="survey-card" id="slide-1">
+                    <div class="progress-bar">
+                        <div class="progress-step active"></div>
+                        <div class="progress-step"></div>
+                        <div class="progress-step"></div>
+                        <div class="progress-step"></div>
+                    </div>
+
+                    <div class="question">
+                        <div class="counter">1 из 4 вопросов</div>
+                        <h2>Что Вы хотите получить?</h2>
+                    </div>
+
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/1-1.png" alt="Сделать сайт">
+                            <div class="option-text">Сделать сайт</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/1-2.png" alt="Больше заявок">
+                            <div class="option-text">Больше заявок</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/1-3.png" alt="Обслуживание сайта">
+                            <div class="option-text">Обслуживание сайта</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/1-4.png" alt="Настройка рекламы">
+                            <div class="option-text">Настройка рекламы</div>
+                        </div>
+                    </div>
+
+                    <div class="button-container3">
+                        <button class="next-button" onclick="nextSlide()">
+                        <span>Далее</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Второй слайд -->
+                <div class="survey-card" id="slide-2" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                        <div class="progress-step"></div>
+                        <div class="progress-step"></div>
+                    </div>
+
+                    <div class="question">
+                        <div class="counter">2 из 4 вопросов</div>
+                        <h2>Какой у Вас вид деятельности?</h2>
+                    </div>
+
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/2-1.png" alt="Продажа услуги">
+                            <div class="option-text">Продажа услуги</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/2-2.png" alt="Продажа товара">
+                            <div class="option-text">Продажа товара</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/2-3.png" alt="Оба варианта">
+                            <div class="option-text">Оба варианта</div>
+                        </div>
+                    </div>
+
+                    <div class="button-container3">
+                        <button class="next-button" onclick="nextSlide()">
+                            <span>Далее</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Третий слайд -->
+                <div class="survey-card" id="slide-3" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                        <div class="progress-step"></div>
+                    </div>
+
+                    <div class="question">
+                        <div class="counter">3 из 4 вопросов</div>
+                        <h2>Как будем делать сайт?</h2>
+                    </div>
+
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/3-1.png" alt="Сделать лендинг на готовом решении">
+                            <div class="option-text">Сделать лендинг на готовом решении</div>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/3-2.png" alt="Разработать уникальный дизайн лендинга">
+                            <div class="option-text">Разработать уникальный дизайн лендинга</div>
+                        </div>
+                    </div>
+
+                    <div class="button-container3">
+                        <button class="next-button" onclick="nextSlide()">
+                            <span>Далее</span>
+                            <span class="arrow">›</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Четвертый слайд -->
+                <div class="survey-card" id="slide-4" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                        <div class="progress-step active"></div>
+                    </div>
+
+                    <div class="question">
+                        <div class="counter">4 из 4 вопросов</div>
+                        <h2>Выберите, что дополнительно к сайту нужно</h2>
+                    </div>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">
+                            <img src="./image/THREE/4-1.png" alt="Интеграция с CRM">
+                            <div class="option-text">Интеграция с CRM (Амо, Битрикс24)</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="./image/THREE/4-2.png" alt="Яндекс директ реклама">
+                        <div class="option-text">Яндекс директ реклама</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="./image/THREE/4-3.png" alt="Настройка рекламы соц. сети">
+                        <div class="option-text">Настройка рекламы соц. сети</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="./image/THREE/4-4.png" alt="Гугл реклама">
+                        <div class="option-text">Гугл реклама</div>
+                    </div>
+                    <div class="option" onclick="selectOption(this)">
+                        <img src="./image/THREE/4-5.png" alt="SEO продвижение">
+                        <div class="option-text">SEO продвижение</div>
+                    </div>
+                </div>
+                <div class="button-container3">
+                    <button class="next-button">
+                    <span>Закончить</span>
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container4-header">
+            <h1>Разработали и воплотили <br>в жизнь более 200 сайтов</h1>
+            <div class="desktop-only">
+                <span class="cont4-title">Проекты</span>
+                <a href="#" class="inactive-button">Лендинг</a>
+	            <button type="button" class="btn btn-success">Многостраничный сайт</button>
+                <a href="#" class="button" id="btn1" title="Нажмите, чтобы перейти в интернет магазин!">Интернет-магазин</a>
+                
+            </div>
+        </div>
+
+        <div class="container4" id="imageGrid">
+            <!-- Все изображения -->
+            <div class="item"><img src="./image/FOUR/Строй-материалы 1.jpg" alt="1" /></div>
+            <div class="item"><img src="./image/FOUR/Игровое-оборудование 1.jpg" alt="2" /></div>
+            <div class="item"><img src="./image/FOUR/Сантехника 2.jpg" alt="3" /></div>
+            <div class="item"><img src="./image/FOUR/Мебель 2.jpg" alt="4" /></div>
+            <div class="item extra"><img src="./image/FOUR/Раковины 1.jpg" alt="5" /></div>
+            <div class="item extra"><img src="./image/FOUR/Ремонт-тракторов 1.jpg" alt="6" /></div>
+            <div class="item extra"><img src="./image/FOUR/Столешницы 2.jpg" alt="7" /></div>
+            <div class="item extra"><img src="./image/FOUR/электрик 1.jpg" alt="8" /></div>
+            <div class="item extra"><img src="./image/FOUR/гравировка 1.jpg" alt="9" /></div>
+            <div class="item extra"><img src="./image/FOUR/магазин-оборуд 1.jpg" alt="10" /></div>
+            <div class="item extra"><img src="./image/FOUR/дом 1.jpg" alt="11" /></div>
+            <div class="item extra"><img src="./image/FOUR/изоляция 1.jpg" alt="12" /></div>
+        </div>
+
+        <div id="favorites-modal" class="fav-modal">
+            <div class="fav-modal__dialog">
+                <div class="fav-modal__header">
+                    <h3>Понравившиеся</h3>
+                    <button class="fav-modal__close" aria-label="Закрыть">&times;</button>
+                </div>
+                <div class="fav-modal__grid" id="favoritesGrid"></div>
+                <div class="fav-modal__empty" id="favoritesEmpty" style="display:none;">
+                    Пока пусто. Наведите на проект и нажмите сердечко, чтобы добавить.
+                </div>
+            </div>
+        </div>
+
+        <div id="img-modal">
+            <span class="img-modal__close">&times;</span>
+            <img id="img-modal-content" alt="">
+        </div>
+        <div class="text1 mobile-only" id="toggleContainer">
+            <button id="toggleButton" class="buttonpic">Загрузить еще</button>
+        </div>
+        
+
+         <div class="about-section">
+            <img src="./image/FIVE/fon52.png" class="fon52" alt="fon52">
+            <div class="left-panel">
+                
+                <div class="name-tag">Стас Михайлов</div>
+                <div class="position-tag">Основатель компании GRANSS</div>
+                <div class="contact-box">
+                    <div class="contact-message">Задавайте вопросы мне лично</div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                        <img src="./image/FIVE/instagram-sketched 1.png" alt="inst" class="instagram-icon">
+                        </a>
+                        <a href="#" class="social-icon">
+                        <img src="./image/FIVE/Whatsapp 3.png" alt="wa" class="whatsapp-icon">
+                        </a>
+                        <a href="#" class="social-icon">
+                        <img src="./image/FIVE/envelope 2.png" alt="env" class="email-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h1 class="section-title">О себе</h1>
+                <h2 class="section-subtitle">СТАС МИХАЙЛОВ</h2>
+
+                <div class="services-grid">
+                    <div class="service-box">
+                        <div class="service-text">
+                            Я предприниматель<br>с опытом 12-ти лет
+                        </div>
+                        <div class="service-icon">
+                            <img src="./image/FIVE/Красные 1.png" alt="Опыт" class="clock">
+                        </div>
+                    </div>
+
+                    <div class="service-box">
+                        <div class="service-text">
+                            Моя команда готова<br>помочь с решением<br>продающего сайт
+                        </div>
+                        <div class="service-icon">
+                            <img src="./image/FIVE/123123.png" alt="Команда" class="rocket">
+                        </div>
+                    </div>
+
+                    <div class="service-box">
+                        <div class="service-text">
+                            Сделаю так, чтобы о Вашей<br>услуге узнали. Ваши чеки<br>возрастут в объеме
+                        </div>
+                        <div class="service-icon">
+                            <img src="./image/FIVE/money 5.png" alt="money5" class="money5">
+                        </div>
+                    </div>
+
+                    <div class="service-box">
+                        <div class="service-text">
+                            Как никто другой знаю<br>как сильно нужны клиенты<br>и продажи в бизнесе
+                        </div>
+                        <div class="service-icon">
+                            <img src="./image/FIVE/target_PNG37 2.png" alt="Клиенты" class="target">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br><br><br><br>
+        <section class="benefits-section">
+            <img src="./image/SIX/orange.png" alt="" class="orange-splash">
+            <div class="benefits-container">
+                <h2 class="benefits-title">Заказывая сайт, Вы получаете</h2>
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <div class="benefit-number">1</div>
+                        <div class="benefit-text">Современный и удобный сайт для ваших клиентов</div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-number">3</div>
+                        <div class="benefit-text">Надежное и уважительное сотрудничество</div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-number">2</div>
+                        <div class="benefit-text">Удобное управление сайтом</div>
+                    </li>
+                    <li class="benefit-item">
+                        <div class="benefit-number">4</div>
+                        <div class="benefit-text">Домен сайта в подарок</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="hero-section">
+            <div class="seven">
+                <div class="content-wrapper">
+                    <br><br>
+                    <div class="text-form">
+                        <h1 class="deck7">Вам <span class="green">нужен современный красивый сайт</span>,<br>который будет приносить клиентов?</h1>
+                        <h1 class="deck72">Вам нужен сайт, <br>который будет <br><span class="green">приносить клиентов?</span></h1>
+
+                        <div class="form-box">
+                            <h2>Заполните форму</h2>
+                            <p>и моментально получите КП<br> на разработку Вашего сайта</p>
+                            <input type="text" placeholder="Введите Ваше имя" />
+                            <input type="tel" placeholder="+7 (_ _ _) _ _ _-_ _-_ _" />
+                            <button class="send">Отправить</button>
+                            <label class="custom-checkbox">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                <span class="consent">Нажимая, соглашаетесь на обработку персональных данных</span>
+                            </label>
+                        </div>
+
+                        <div class="form-box">
+                            <h2>Регистрация</h2>
+                            <form>
+                                <input type="text" placeholder="Введите Ваше имя" required>
+                                <input type="email" placeholder="Введите Email" required>
+                                <input type="password" placeholder="Введите пароль" required>
+                                <input type="password" placeholder="Подтвердите пароль" required>
+                                <button type="submit" class="send">Зарегистрироваться</button>
+                            </form>
+                        </div>
+
+                        <div class="form-box">
+                            <h2>Вход</h2>
+                            <form>
+                                <input type="email" placeholder="Введите Email" required>
+                                <input type="password" placeholder="Введите пароль" required>
+                                <button type="submit" class="send">Войти</button>
+                            </form>
+                        </div>
+                    </div>
+                    <img src="./image/SEVEN/Каталог 8.png" alt="GRANSS Буклет" class="brochure-image" />
+                </div>
+            </div>
+            <button id="scrollTopBtn">Наверх ↑</button>
+        </section>
+
+
+        <!-- таймер -->
+        <section class="promo-timer">
+            <div class="promo-content">
+                <h2>Акция на первый заказ!!!</h2>
+                <p>До окончания осталось: <span id="countdown">00:00:00</span></p>
+            </div>
+        </section>
+
+
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="./image/Header/logo_grans_2 2.png" alt="RANSS Logo" id="footerLogo">
+                    <a>RANSS</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="tel:+74951233445">+7(495) 123 34 45</a>
+                    <a href="mailto:info@granss.ru">info@granss.ru</a>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-nav-column">
+                        <a href="#">Многостраничник</a>
+                        <a href="#">Лендинг</a>
+                        <a href="#">Интернет-Магазин</a>
+                    </div>
+                    <div class="footer-nav-column">
+                        <a href="#">Каталог готовых сайтов</a>
+                        <a href="#">Настройка рекламы</a>
+                        <a href="#">SEO продвижение</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <img src="./image/FIVE/instagram-sketched 1.png" alt="inst" class="instagram-icon">
+                    </a>
+                    <a href="#" class="social-icon" aria-label="WhatsApp">
+                        <img src="./image/FIVE/Whatsapp 3.png" alt="wa" class="whatsapp-icon">
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Email">
+                        <img src="./image/FIVE/envelope 2.png" alt="env" class="email-icon">
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-policy">
+                        <a href="#">Политика конфиденциальности</a>
+                    </div>
+                    <div class="footer-copyright">
+                        © Все права защищены
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="./js/slider.js"></script>
+        <script src="./js/menu.js"></script>
+        <script src="./js/phonemask.js"></script>
+        <script src="./js/hider.js"></script>
+        <script src="./js/liker.js"></script>
+        <script src="./js/ellipse.js"></script>
+        <script src="./js/UP.js"></script>
+        <script src="./js/logo.js"></script>
+        <script src="./js/message.js"></script>
+        <script src="./js/timer.js"></script>
+        <script src="./js/imagesss.js"></script>
+        <script src="./js/btnhelper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/keyboardScroll.js"></script>
+        <script src="js/mobile-scroll.js"></script>
+        <script src="js/cash.js"></script>
+        <script src="./js/favorites.js"></script>
+    </body>
+</html>
